@@ -10,7 +10,7 @@ npm start
 
 ##################################
 
-*** create container va comonent
+*** create container va component
 
 npm run generate container ProductPage
 
