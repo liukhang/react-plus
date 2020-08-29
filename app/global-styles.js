@@ -42,6 +42,25 @@ const GlobalStyle = createGlobalStyle`
       background: #fff;
       color: red;
   }
+
+  .card-title {
+    min-height: 48px;
+  }
+
+  .card {
+    margin-bottom: 15px;
+  }
+
+  .product-detail {
+    margin-top: 50px;
+    background: #eee;
+    padding: 3em;
+    line-height: 1.5em;
+  }
+
+  .product-detail .image img{
+    width:100%;
+  }
 `;
 
 export default GlobalStyle;

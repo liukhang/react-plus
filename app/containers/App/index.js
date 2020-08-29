@@ -14,6 +14,7 @@ import HomePage from 'containers/HomePage/Loadable';
 import LoginPage from 'containers/LoginPage/Loadable';
 import ProductPage from 'containers/ProductPage/Loadable';
 import ProfilePage from 'containers/ProfilePage/Loadable';
+import ProductDetailPage from 'containers/ProductDetailPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
 import {createStructuredSelector} from "reselect";
@@ -60,21 +61,26 @@ function App(props) {
         </ul>
       </header>
       <div className="container">
-        <Switch>
-          <Route exact path="/home">
-            <HomePage />
-          </Route>
-          <Route exact path="/products">
-            <ProductPage />
-          </Route>
-          <Route path="/profile">
-            <ProfilePage />
-          </Route>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
-        </Switch>
-        <GlobalStyle />
+        <div className="row">
+          <Switch>
+            <Route exact path="/home">
+              <HomePage />
+            </Route>
+            <Route exact path="/products">
+              <ProductPage />
+            </Route>
+            <Route exact path="/products/:id">
+              <ProductDetailPage />
+            </Route>
+            <Route path="/profile">
+              <ProfilePage />
+            </Route>
+            <Route path="/login">
+              <LoginPage />
+            </Route>
+          </Switch>
+          <GlobalStyle />
+        </div>
       </div>
     </div>
   );

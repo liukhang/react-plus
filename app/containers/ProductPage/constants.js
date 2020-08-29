@@ -4,4 +4,4 @@
  *
  */
 
-export const DEFAULT_ACTION = 'app/ProductPage/DEFAULT_ACTION';
+export const PRODUCT_FETCH_REQUESTED = 'PRODUCT_FETCH_REQUESTED';
