@@ -4,10 +4,10 @@
  *
  */
 
-import { DEFAULT_ACTION } from './constants';
+import { PRODUCT_FETCH_REQUESTED } from './constants';
 
-export function defaultAction() {
+export function getListProduct() {
   return {
-    type: DEFAULT_ACTION,
+    type: PRODUCT_FETCH_REQUESTED
   };
 }

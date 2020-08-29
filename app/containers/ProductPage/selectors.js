@@ -18,7 +18,7 @@ const selectProductPageDomain = state => state.productPage || initialState;
 const makeSelectProductPage = () =>
   createSelector(
     selectProductPageDomain,
-    substate => substate,
+    substate => substate.products,
   );
 
 export default makeSelectProductPage;
