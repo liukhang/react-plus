@@ -16,47 +16,24 @@ import ProductPage from 'containers/ProductPage/Loadable';
 import ProfilePage from 'containers/ProfilePage/Loadable';
 
 import GlobalStyle from '../../global-styles';
-import {createStructuredSelector} from "reselect";
-import {makeSelectloginStatus} from "../LoginPage/selectors";
-import { connect } from 'react-redux';
-import { LOGOUT_ACTION} from "../LoginPage/constants";
 
-function App(props) {
-
-  const logout = () => {
-    props.logout();
-  }
-
+export default function App() {
   return (
     <div>
       <header>
         <ul className="nav">
           <li className="nav-item">
-            <NavLink to="/home" className="nav-link">
-              Home
-            </NavLink>
+            <NavLink to="/home" className="nav-link">Home</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/products" className="nav-link">
-              Product
-            </NavLink>
+            <NavLink to="/products" className="nav-link">Product</NavLink>
           </li>
           <li className="nav-item">
-            <NavLink to="/profile" className="nav-link">
-              Profile
-            </NavLink>
+            <NavLink to="/profile" className="nav-link">Profile</NavLink>
           </li>
-
-          {props.loginStatus ?
-            <li className="nav-item ml-auto">
-              <button className="btn btn-primary float-left mt-3" onClick={logout}>Logout</button>
-            </li>
-            : <li className="nav-item">
-              <NavLink to="/login" className="nav-link">
-                Login
-              </NavLink>
-            </li>
-          }
+          <li className="nav-item">
+            <NavLink to="/login" className="nav-link">Login</NavLink>
+          </li>
         </ul>
       </header>
       <div className="container">
@@ -79,21 +56,3 @@ function App(props) {
     </div>
   );
 }
-
-function mapDispatchToProps(dispatch) {
-  return {
-    logout: () => {
-      dispatch({
-        type: LOGOUT_ACTION,
-      });
-    },
-
-    dispatch,
-  };
-}
-
-const mapStateToProps = createStructuredSelector({
-  loginStatus: makeSelectloginStatus(),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);

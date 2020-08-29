@@ -21,11 +21,5 @@ const makeSelectLoginPage = () =>
     substate => substate,
   );
 
-const makeSelectloginStatus = () =>
-  createSelector(
-    selectLoginPageDomain,
-    substate => substate.loginStatus,
-  );
-
 export default makeSelectLoginPage;
-export { selectLoginPageDomain, makeSelectloginStatus };
+export { selectLoginPageDomain };
